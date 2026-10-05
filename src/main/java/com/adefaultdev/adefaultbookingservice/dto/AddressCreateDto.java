@@ -4,6 +4,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * DTO used for creating a new address.
+ *
+ * @author AdefaultDev
+ * @since 1.0
+ */
 @Getter
 @Setter
 @NoArgsConstructor

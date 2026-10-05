@@ -1,12 +1,9 @@
 package com.adefaultdev.adefaultbookingservice.controller;
 
-
 import com.adefaultdev.adefaultbookingservice.dto.AddressCreateDto;
 import com.adefaultdev.adefaultbookingservice.dto.AddressResponseDto;
-import com.adefaultdev.adefaultbookingservice.dto.UserCreateDto;
-import com.adefaultdev.adefaultbookingservice.dto.UserResponseDto;
+import com.adefaultdev.adefaultbookingservice.exception.AddressNotFoundException;
 import com.adefaultdev.adefaultbookingservice.service.AddressService;
-import com.adefaultdev.adefaultbookingservice.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,30 +16,31 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/addresses")
 @RequiredArgsConstructor
-public class UserController {
+public class AddressController {
 
-    private final UserService userService;
+    private final AddressService addressService;
 
     @PostMapping
-    public UserResponseDto createUser(
-            @RequestBody UserCreateDto dto) {
+    public AddressResponseDto createAddress(
+            @RequestBody AddressCreateDto dto) {
 
-        return userService.createUser(dto);
+        return addressService.createAddress(dto);
     }
 
     @PutMapping("/{id}")
-    public UserResponseDto editUser(
+    public AddressResponseDto editAddress(
             @PathVariable Long id,
-            @RequestBody UserCreateDto dto) {
+            @RequestBody AddressCreateDto dto) {
 
-        return userService.editUser(id, dto);
+        return addressService.editAddress(id, dto);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteUser(@PathVariable Long id) {
-        userService.deleteUser(id);
+    public void deleteAddress(@PathVariable Long id) {
+        addressService.deleteAddress(id);
     }
 }
+

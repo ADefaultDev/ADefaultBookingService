@@ -6,10 +6,15 @@ import com.adefaultdev.adefaultbookingservice.entity.Booking;
 import com.adefaultdev.adefaultbookingservice.repository.BookingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Provides business logic for managing bookings.
+ *
+ * @author AdefaultDev
+ * @since 1.0
+ */
 @Service
 @RequiredArgsConstructor
 public class BookingService {
