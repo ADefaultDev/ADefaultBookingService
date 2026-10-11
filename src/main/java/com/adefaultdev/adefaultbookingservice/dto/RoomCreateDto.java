@@ -1,5 +1,6 @@
 package com.adefaultdev.adefaultbookingservice.dto;
 
+import com.adefaultdev.adefaultbookingservice.entity.Address;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,5 +19,9 @@ public class RoomCreateDto {
     private String name;
 
     private int capacity;
+
+    private Address address;
+
+    private int number;
 }
 

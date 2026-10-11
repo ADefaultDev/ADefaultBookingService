@@ -1,5 +1,6 @@
 package com.adefaultdev.adefaultbookingservice.dto;
 
+import com.adefaultdev.adefaultbookingservice.entity.Address;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -18,5 +19,9 @@ public class RoomResponseDto {
     private String name;
 
     private int capacity;
+
+    private Address address;
+
+    private int number;
 }
 

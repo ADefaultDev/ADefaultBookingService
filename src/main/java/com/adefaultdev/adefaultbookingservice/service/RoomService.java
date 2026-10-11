@@ -1,8 +1,13 @@
 package com.adefaultdev.adefaultbookingservice.service;
 
+import com.adefaultdev.adefaultbookingservice.dto.AddressCreateDto;
+import com.adefaultdev.adefaultbookingservice.dto.AddressResponseDto;
 import com.adefaultdev.adefaultbookingservice.dto.RoomCreateDto;
 import com.adefaultdev.adefaultbookingservice.dto.RoomResponseDto;
+import com.adefaultdev.adefaultbookingservice.entity.Address;
 import com.adefaultdev.adefaultbookingservice.entity.Room;
+import com.adefaultdev.adefaultbookingservice.exception.AddressNotFoundException;
+import com.adefaultdev.adefaultbookingservice.exception.RoomNotFoundException;
 import com.adefaultdev.adefaultbookingservice.repository.RoomRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -28,12 +33,25 @@ public class RoomService {
 
         Room savedRoom = roomRepository.save(room);
 
-        return new RoomResponseDto(
-                savedRoom.getId(),
-                savedRoom.getName(),
-                savedRoom.getCapacity()
-        );
+        return toResponseDto(savedRoom);
 
+    }
+
+    public RoomResponseDto editRoom(
+            Long id,
+            RoomCreateDto dto) {
+
+        Room room = roomRepository.findById(id)
+                .orElseThrow(() -> new RoomNotFoundException(id));
+
+        room.setCapacity(dto.getCapacity());
+        room.setName(dto.getName());
+        room.setNumber(dto.getNumber());
+        room.setAddress(dto.getAddress());
+
+        Room updatedRoom = roomRepository.save(room);
+
+        return toResponseDto(updatedRoom);
     }
 
     public List<Room> getAllRooms() {
@@ -45,6 +63,19 @@ public class RoomService {
     }
 
     public void deleteRoom(Long id) {
+        if (!roomRepository.existsById(id)){
+            throw new RoomNotFoundException(id);
+        }
         roomRepository.deleteById(id);
+    }
+
+    public RoomResponseDto toResponseDto(Room room){
+        return new RoomResponseDto(
+                room.getId(),
+                room.getName(),
+                room.getCapacity(),
+                room.getAddress(),
+                room.getNumber()
+        );
     }
 }

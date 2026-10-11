@@ -2,7 +2,6 @@ package com.adefaultdev.adefaultbookingservice.controller;
 
 import com.adefaultdev.adefaultbookingservice.dto.AddressCreateDto;
 import com.adefaultdev.adefaultbookingservice.dto.AddressResponseDto;
-import com.adefaultdev.adefaultbookingservice.exception.AddressNotFoundException;
 import com.adefaultdev.adefaultbookingservice.service.AddressService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

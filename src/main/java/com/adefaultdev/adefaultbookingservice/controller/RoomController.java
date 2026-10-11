@@ -1,16 +1,45 @@
 package com.adefaultdev.adefaultbookingservice.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import com.adefaultdev.adefaultbookingservice.dto.RoomCreateDto;
+import com.adefaultdev.adefaultbookingservice.dto.RoomResponseDto;
+import com.adefaultdev.adefaultbookingservice.service.RoomService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/rooms")
+@RequiredArgsConstructor
 public class RoomController {
 
-    @GetMapping
-    public String getRooms() {
-        return "List of rooms";
+    private final RoomService roomService;
+
+    @PostMapping
+    public RoomResponseDto createRoom(
+            @RequestBody RoomCreateDto dto) {
+
+        return roomService.createRoom(dto);
+    }
+
+    @PutMapping("/{id}")
+    public RoomResponseDto editRoom(
+            @PathVariable Long id,
+            @RequestBody RoomCreateDto dto) {
+
+        return roomService.editRoom(id, dto);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteRoom(@PathVariable Long id) {
+        roomService.deleteRoom(id);
     }
 
 }
