@@ -2,8 +2,10 @@ package com.adefaultdev.adefaultbookingservice.dto;
 
 import com.adefaultdev.adefaultbookingservice.entity.Room;
 import com.adefaultdev.adefaultbookingservice.entity.User;
+import com.adefaultdev.adefaultbookingservice.enums.BookingStatus;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+
 import java.util.Date;
 
 /**
@@ -13,10 +15,14 @@ import java.util.Date;
  * @since 1.0
  */
 @Getter
-@NoArgsConstructor
+@AllArgsConstructor
 public class BookingResponseDto {
 
+    private Long id;
+
     private Date date;
+
+    private BookingStatus bookingStatus;
 
     private Room room;
 

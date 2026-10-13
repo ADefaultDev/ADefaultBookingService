@@ -3,7 +3,7 @@ package com.adefaultdev.adefaultbookingservice.service;
 import com.adefaultdev.adefaultbookingservice.dto.UserCreateDto;
 import com.adefaultdev.adefaultbookingservice.dto.UserResponseDto;
 import com.adefaultdev.adefaultbookingservice.entity.User;
-import com.adefaultdev.adefaultbookingservice.exception.UserNotFoundException;
+import com.adefaultdev.adefaultbookingservice.exceptions.UserNotFoundException;
 import com.adefaultdev.adefaultbookingservice.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

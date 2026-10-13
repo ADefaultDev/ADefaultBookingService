@@ -1,13 +1,9 @@
 package com.adefaultdev.adefaultbookingservice.service;
 
-import com.adefaultdev.adefaultbookingservice.dto.AddressCreateDto;
-import com.adefaultdev.adefaultbookingservice.dto.AddressResponseDto;
 import com.adefaultdev.adefaultbookingservice.dto.RoomCreateDto;
 import com.adefaultdev.adefaultbookingservice.dto.RoomResponseDto;
-import com.adefaultdev.adefaultbookingservice.entity.Address;
 import com.adefaultdev.adefaultbookingservice.entity.Room;
-import com.adefaultdev.adefaultbookingservice.exception.AddressNotFoundException;
-import com.adefaultdev.adefaultbookingservice.exception.RoomNotFoundException;
+import com.adefaultdev.adefaultbookingservice.exceptions.RoomNotFoundException;
 import com.adefaultdev.adefaultbookingservice.repository.RoomRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

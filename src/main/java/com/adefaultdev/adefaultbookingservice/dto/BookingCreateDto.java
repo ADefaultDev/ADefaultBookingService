@@ -2,6 +2,7 @@ package com.adefaultdev.adefaultbookingservice.dto;
 
 import com.adefaultdev.adefaultbookingservice.entity.Room;
 import com.adefaultdev.adefaultbookingservice.entity.User;
+import com.adefaultdev.adefaultbookingservice.enums.BookingStatus;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,6 +20,8 @@ import java.util.Date;
 public class BookingCreateDto {
 
     private Date date;
+
+    private BookingStatus bookingStatus;
 
     private Room room;
 
