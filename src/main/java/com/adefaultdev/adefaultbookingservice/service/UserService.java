@@ -47,6 +47,13 @@ public class UserService {
         return toResponseDto(user);
     }
 
+    public UserResponseDto getUserByEmail (String email) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new UserNotFoundException(email));
+
+        return toResponseDto(user);
+    }
+
     public UserResponseDto editUser(
             Long id,
             UserCreateDto dto) {
