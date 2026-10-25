@@ -5,6 +5,7 @@ import com.adefaultdev.adefaultbookingservice.dto.AddressResponseDto;
 import com.adefaultdev.adefaultbookingservice.service.AddressService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,6 +22,7 @@ public class AddressController {
 
     private final AddressService addressService;
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public AddressResponseDto createAddress(
             @RequestBody AddressCreateDto dto) {
@@ -28,6 +30,7 @@ public class AddressController {
         return addressService.createAddress(dto);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public AddressResponseDto editAddress(
             @PathVariable Long id,
@@ -36,6 +39,7 @@ public class AddressController {
         return addressService.editAddress(id, dto);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteAddress(@PathVariable Long id) {
