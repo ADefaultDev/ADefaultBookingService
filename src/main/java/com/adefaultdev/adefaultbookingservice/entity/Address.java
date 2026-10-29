@@ -9,6 +9,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * The entity representing address.
+ *
+ * @author AdefaultDev
+ * @since 1.0
+ */
 @Entity
 @Table(name = "addresses")
 @Getter

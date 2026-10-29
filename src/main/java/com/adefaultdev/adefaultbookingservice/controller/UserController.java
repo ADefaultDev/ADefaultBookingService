@@ -18,6 +18,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * The controller for managing users.
+ *
+ * @author AdefaultDev
+ * @since 1.0
+ */
 @RestController
 @RequestMapping("/api/users")
 @RequiredArgsConstructor

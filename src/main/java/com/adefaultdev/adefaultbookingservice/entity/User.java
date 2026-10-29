@@ -12,6 +12,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Represents the user in the system.
+ *
+ * @author AdefaultDev
+ * @since 1.0
+ */
 @Entity
 @Table(name = "users")
 @Getter

@@ -14,6 +14,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.util.Date;
 
+/**
+ * The entity representing booking.
+ *
+ * @author AdefaultDev
+ * @since 1.0
+ */
 @Entity
 @Table(name = "booking")
 @Getter

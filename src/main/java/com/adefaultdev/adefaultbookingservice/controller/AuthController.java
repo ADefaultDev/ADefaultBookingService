@@ -10,6 +10,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * The controller for managing login and registration.
+ *
+ * @author AdefaultDev
+ * @since 1.0
+ */
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor

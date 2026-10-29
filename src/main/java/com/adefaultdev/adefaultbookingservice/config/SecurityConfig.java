@@ -27,6 +27,12 @@ import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.web.SecurityFilterChain;
 import com.nimbusds.jose.jwk.source.ImmutableSecret;
 
+/**
+ * The security configuration and jwt implementation.
+ *
+ * @author AdefaultDev
+ * @since 1.0
+ */
 @Configuration
 @EnableMethodSecurity
 public class SecurityConfig {
