@@ -1,5 +1,8 @@
 package com.adefaultdev.adefaultbookingservice.queue;
 
+import com.adefaultdev.adefaultbookingservice.entity.Room;
+import com.adefaultdev.adefaultbookingservice.entity.User;
+
 import java.time.LocalDateTime;
 
 /**
@@ -9,9 +12,8 @@ import java.time.LocalDateTime;
  * @since 1.0
  */
 public record BookingRequest(
-        Long userId,
-        Long roomId,
+        User user,
+        Room room,
         LocalDateTime startTime,
         LocalDateTime endTime
-) {
-}
+) {}

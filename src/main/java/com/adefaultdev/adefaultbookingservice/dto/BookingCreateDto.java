@@ -6,6 +6,8 @@ import com.adefaultdev.adefaultbookingservice.enums.BookingStatus;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -26,4 +28,8 @@ public class BookingCreateDto {
     private Room room;
 
     private User user;
+
+    private LocalDateTime startTime;
+
+    private LocalDateTime endTime;
 }

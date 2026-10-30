@@ -12,6 +12,8 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -37,7 +39,12 @@ public class Booking {
 
     private User user;
 
+    private LocalDateTime startTime;
+
+    private LocalDateTime endTime;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private BookingStatus bookingStatus;
+
 }

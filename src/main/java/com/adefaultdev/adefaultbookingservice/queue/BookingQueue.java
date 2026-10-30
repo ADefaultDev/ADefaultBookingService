@@ -9,13 +9,17 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class BookingQueue {
 
     private final BlockingQueue<BookingRequest> queue =
-            new LinkedBlockingQueue<>();
+            new LinkedBlockingQueue<>(1000);
 
-    public void add(BookingRequest request) {
-        queue.add(request);
+    public boolean add(BookingRequest request) {
+        return queue.offer(request);
     }
 
     public BookingRequest take() throws InterruptedException {
         return queue.take();
+    }
+
+    public int size() {
+        return queue.size();
     }
 }
