@@ -5,7 +5,6 @@ import com.adefaultdev.adefaultbookingservice.entity.User;
 import com.adefaultdev.adefaultbookingservice.enums.BookingStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-
 import java.time.LocalDateTime;
 import java.util.Date;
 

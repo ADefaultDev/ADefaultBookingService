@@ -9,6 +9,12 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * The worker that uses queue to pass booking requests to BookingService
+ *
+ * @author AdefaultDev
+ * @since 1.0
+ */
 @Component
 @RequiredArgsConstructor
 @Slf4j

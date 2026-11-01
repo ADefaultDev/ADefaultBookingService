@@ -2,7 +2,6 @@ package com.adefaultdev.adefaultbookingservice.queue;
 
 import com.adefaultdev.adefaultbookingservice.entity.Room;
 import com.adefaultdev.adefaultbookingservice.entity.User;
-
 import java.time.LocalDateTime;
 
 /**

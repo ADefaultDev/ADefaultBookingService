@@ -1,10 +1,15 @@
 package com.adefaultdev.adefaultbookingservice.queue;
 
 import org.springframework.stereotype.Component;
-
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
+/**
+ * The queue for managing booking requests
+ *
+ * @author AdefaultDev
+ * @since 1.0
+ */
 @Component
 public class BookingQueue {
 
