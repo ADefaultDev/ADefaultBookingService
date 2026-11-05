@@ -39,7 +39,6 @@ public class BookingService {
         booking.setUser(bookingCreateDto.getUser());
         booking.setRoom(bookingCreateDto.getRoom());
         booking.setBookingStatus(bookingCreateDto.getBookingStatus());
-        booking.setDate(bookingCreateDto.getDate());
         booking.setStartTime(bookingCreateDto.getStartTime());
         booking.setEndTime(bookingCreateDto.getEndTime());
 
@@ -59,7 +58,6 @@ public class BookingService {
         booking.setBookingStatus(dto.getBookingStatus());
         booking.setRoom(dto.getRoom());
         booking.setUser(dto.getUser());
-        booking.setDate(dto.getDate());
 
         Booking updatedBooking = bookingRepository.save(booking);
 
@@ -69,13 +67,13 @@ public class BookingService {
     @Transactional
     public void processBooking(BookingRequest request) {
 
-        User user = userRepository.findById(request.user())
+        User user = userRepository.findById(request.user().getId())
                 .orElseThrow(() ->
-                        new UserNotFoundException(request.user()));
+                        new UserNotFoundException(request.user().getId()));
 
-        Room room = roomRepository.findById(request.roomId())
+        Room room = roomRepository.findById(request.room().getId())
                 .orElseThrow(() ->
-                        new RoomNotFoundException(request.roomId()));
+                        new RoomNotFoundException(request.room().getId()));
 
         if (!request.startTime().isBefore(request.endTime())) {
             throw new IllegalArgumentException(
@@ -113,7 +111,6 @@ public class BookingService {
     public BookingResponseDto toResponseDto(Booking booking){
         return new BookingResponseDto(
                 booking.getId(),
-                booking.getDate(),
                 booking.getBookingStatus(),
                 booking.getRoom(),
                 booking.getUser(),

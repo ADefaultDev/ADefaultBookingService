@@ -1,5 +1,7 @@
 package com.adefaultdev.adefaultbookingservice.entity;
 
+import jakarta.annotation.Nullable;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,12 +28,16 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String country;
 
+    @Column(nullable = false)
     private String city;
 
+    @Column(nullable = false)
     private String street;
 
+    @Column(nullable = false)
     private String houseNumber;
 
 }

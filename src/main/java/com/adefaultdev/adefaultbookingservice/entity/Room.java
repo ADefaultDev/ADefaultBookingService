@@ -1,5 +1,6 @@
 package com.adefaultdev.adefaultbookingservice.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,14 +29,17 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String name;
 
     @ManyToOne
     @JoinColumn( name = "address_id", nullable = false)
     private Address address;
 
+    @Column(nullable = false)
     private int capacity;
 
+    @Column(nullable = false)
     private int number;
 }
 

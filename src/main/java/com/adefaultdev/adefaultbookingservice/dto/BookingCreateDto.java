@@ -20,8 +20,6 @@ import java.util.Date;
 @NoArgsConstructor
 public class BookingCreateDto {
 
-    private Date date;
-
     private BookingStatus bookingStatus;
 
     private Room room;

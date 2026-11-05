@@ -20,8 +20,6 @@ public class BookingResponseDto {
 
     private Long id;
 
-    private Date date;
-
     private BookingStatus bookingStatus;
 
     private Room room;
