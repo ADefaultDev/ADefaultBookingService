@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,14 +31,15 @@ public class Room {
     private Long id;
 
     @Column(nullable = false)
-    private String name;
+    private int capacity;
 
-    @ManyToOne
-    @JoinColumn( name = "address_id", nullable = false)
+    @OneToOne
+    @JoinColumn(name = "address_id", nullable = false, unique = true)
     private Address address;
 
-    @Column(nullable = false)
-    private int capacity;
+    @ManyToOne
+    @JoinColumn(name = "hotel_id", nullable = false)
+    private Hotel hotel;
 
     @Column(nullable = false)
     private int number;

@@ -24,9 +24,8 @@ public class RoomService {
 
     public RoomResponseDto createRoom(RoomCreateDto roomCreateDto) {
         Room room = new Room();
-        room.setName(roomCreateDto.getName());
         room.setCapacity(roomCreateDto.getCapacity());
-
+        room.setHotel(roomCreateDto.getHotel());
         Room savedRoom = roomRepository.save(room);
 
         return toResponseDto(savedRoom);
@@ -41,7 +40,6 @@ public class RoomService {
                 .orElseThrow(() -> new RoomNotFoundException(id));
 
         room.setCapacity(dto.getCapacity());
-        room.setName(dto.getName());
         room.setNumber(dto.getNumber());
         room.setAddress(dto.getAddress());
 
@@ -68,9 +66,9 @@ public class RoomService {
     public RoomResponseDto toResponseDto(Room room){
         return new RoomResponseDto(
                 room.getId(),
-                room.getName(),
                 room.getCapacity(),
                 room.getAddress(),
+                room.getHotel(),
                 room.getNumber()
         );
     }
