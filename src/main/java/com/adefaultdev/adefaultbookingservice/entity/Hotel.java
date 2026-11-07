@@ -43,5 +43,5 @@ public class Hotel {
     private Address address;
 
     @Column(nullable = false)
-    private int number;
+    private int hotelRating;
 }
