@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 public class HotelResponseDto {
 
-    private int id;
+    private Long id;
 
     private List<Room> rooms;
 
