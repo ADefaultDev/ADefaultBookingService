@@ -33,10 +33,6 @@ public class Room {
     @Column(nullable = false)
     private int capacity;
 
-    @OneToOne
-    @JoinColumn(name = "address_id", nullable = false, unique = true)
-    private Address address;
-
     @ManyToOne
     @JoinColumn(name = "hotel_id", nullable = false)
     private Hotel hotel;

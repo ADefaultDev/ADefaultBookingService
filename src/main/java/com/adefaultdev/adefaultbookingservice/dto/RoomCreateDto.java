@@ -19,8 +19,6 @@ public class RoomCreateDto {
 
     private int capacity;
 
-    private Address address;
-
     private Hotel hotel;
 
     private int number;

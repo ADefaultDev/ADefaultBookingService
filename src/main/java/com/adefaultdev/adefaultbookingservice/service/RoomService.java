@@ -41,7 +41,6 @@ public class RoomService {
 
         room.setCapacity(dto.getCapacity());
         room.setNumber(dto.getNumber());
-        room.setAddress(dto.getAddress());
 
         Room updatedRoom = roomRepository.save(room);
 
@@ -67,7 +66,6 @@ public class RoomService {
         return new RoomResponseDto(
                 room.getId(),
                 room.getCapacity(),
-                room.getAddress(),
                 room.getHotel(),
                 room.getNumber()
         );
