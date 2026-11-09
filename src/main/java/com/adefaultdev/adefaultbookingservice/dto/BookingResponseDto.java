@@ -6,7 +6,6 @@ import com.adefaultdev.adefaultbookingservice.enums.BookingStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * DTO returned when a booking is requested or created.

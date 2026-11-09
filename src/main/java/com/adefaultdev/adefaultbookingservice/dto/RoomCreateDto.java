@@ -1,6 +1,5 @@
 package com.adefaultdev.adefaultbookingservice.dto;
 
-import com.adefaultdev.adefaultbookingservice.entity.Address;
 import com.adefaultdev.adefaultbookingservice.entity.Hotel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
