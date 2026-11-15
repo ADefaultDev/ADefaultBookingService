@@ -7,9 +7,14 @@ import com.adefaultdev.adefaultbookingservice.exceptions.UserNotFoundException;
 import com.adefaultdev.adefaultbookingservice.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
+/**
+ * Provides business logic for managing users.
+ *
+ * @author AdefaultDev
+ * @since 1.0
+ */
 @Service
 @RequiredArgsConstructor
 public class UserService {
