@@ -1,6 +1,5 @@
 package com.adefaultdev.adefaultbookingservice.entity;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
